@@ -1,0 +1,33 @@
+GET http://localhost:3500/users
+
+###
+
+POST http://localhost:3500/users
+Content-Type: application/json
+
+{
+    "username": "Kyle",
+    "password": "123456",
+    "roles": ["Employee"]
+}
+
+###
+
+PATCH http://localhost:3500/users
+Content-Type: application/json
+
+{
+    "id": "63c73db09778fa8e0eb9dec6",
+    "username": "Kylee",
+    "roles": ["bitch"],
+    "active": true
+}
+
+###
+
+DELETE http://localhost:3500/users
+Content-Type: application/json
+
+{
+    "id": "63c73db09778fa8e0eb9dec6"
+}
