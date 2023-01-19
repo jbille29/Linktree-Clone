@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 
 // @desc Get all users
 // @route GET /users
-// @access Private
+// @access Public
 const getAllUsers = asyncHandler(async (req, res) => {
     // Get all users from MongoDB
     const users = await User.find().select('-password').lean()
@@ -19,7 +19,7 @@ const getAllUsers = asyncHandler(async (req, res) => {
 
 // @desc Create new user
 // @route POST /users
-// @access Private
+// @access Public
 const createNewUser = asyncHandler(async (req, res) => {
     const { username, password, roles } = req.body
 
@@ -115,11 +115,30 @@ const deleteUser = async (req, res) => {
     res.json(reply)
 }
 
+// @desc Get a user
+// @route GET /users
+// @access Public
+const getUser = asyncHandler(async (req, res) => {
+
+    const id = req.params.id
+
+    // Get all users from MongoDB
+    const user = await User.findById(id).exec()
+
+    if (!user) {
+        return res.status(400).json({ message: 'User not found' })
+    }
+
+    res.json(user)
+    
+})
+
 module.exports = {
     getAllUsers,
     createNewUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    getUser
 }
 
 

@@ -1,11 +1,17 @@
 const express = require('express')
-const router = express.Router()
+const userRouter = express.Router()
+const productCategoryRouter = require('./productCategoryRoutes');
 const userController = require('../controllers/userController')
 
-router.route('/')
+userRouter.use('/:id/productCategories', productCategoryRouter);
+
+userRouter.route('/')
     .get(userController.getAllUsers)
     .post(userController.createNewUser)
     .patch(userController.updateUser)
     .delete(userController.deleteUser)
 
-module.exports = router
+userRouter.route('/:id')
+    .get(userController.getUser)
+
+module.exports = userRouter

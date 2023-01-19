@@ -1,3 +1,5 @@
+### USER REQUESTS
+
 GET http://localhost:3500/users
 
 ###
@@ -13,13 +15,17 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:3500/users/63c8874956092d795b251e14
+
+###
+
 PATCH http://localhost:3500/users
 Content-Type: application/json
 
 {
-    "id": "63c73db09778fa8e0eb9dec6",
-    "username": "Kylee",
-    "roles": ["bitch"],
+    "id": "63c8874956092d795b251e14",
+    "username": "Kyle",
+    "roles": ["Grunt"],
     "active": true
 }
 
@@ -31,3 +37,12 @@ Content-Type: application/json
 {
     "id": "63c73db09778fa8e0eb9dec6"
 }
+
+###
+
+GET http://localhost:3500/users
+
+
+### PRODUCT CATEGORY REQUESTS
+
+GET http://localhost:3500/users/63c8874956092d795b251e14/productCategories

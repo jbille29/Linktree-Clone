@@ -7,6 +7,7 @@ const errorHandler = require('./middleware/errorHandler')
 const { logEvents } = require('./middleware/logger')
 const PORT = process.env.PORT || 3500
 const app = express()
+const userRouter = require('./routes/userRoutes')
 
 connectDB()
 
@@ -14,7 +15,7 @@ app.use(express.json())
 
 app.use(logger)
 
-app.use('/users', require('./routes/userRoutes'))
+app.use('/users', userRouter)
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB')
