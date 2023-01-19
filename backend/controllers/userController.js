@@ -115,10 +115,10 @@ const deleteUser = async (req, res) => {
     res.json(reply)
 }
 
-// @desc Get a user
+// @desc Gets all information need to display a users page
 // @route GET /users
 // @access Public
-const getUser = asyncHandler(async (req, res) => {
+const getUserPageInfo = asyncHandler(async (req, res) => {
 
     const id = req.params.id
 
@@ -138,11 +138,13 @@ module.exports = {
     createNewUser,
     updateUser,
     deleteUser,
-    getUser
+    getUserPageInfo
 }
 
 
 // TODO: Check type before using model.Find(id) in any of the controllers otherwise type error will crash server
 // TODO: Check if routes for UPDATE and DELETE are users/id, because the code above is grabbing id from the body not from the url
+//TODO: Modify GET user/:id route so that it returns only necessary info for the page
+// Should I create a separate route for GET user/:id for someone who is not authorized to edit? Or does that even matter
 
 

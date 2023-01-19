@@ -9,6 +9,10 @@ const productCategorySchema = new mongoose.Schema(
         name: {
             type: String,
             required: true
+        },
+        order: {
+            type: Number,
+            required: true
         }
     },
     {
@@ -17,3 +21,5 @@ const productCategorySchema = new mongoose.Schema(
 )
 
 module.exports = mongoose.model('ProductCategory', productCategorySchema)
+
+//TODO: Add increment feature to order, we will also not want any duplicates

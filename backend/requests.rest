@@ -45,4 +45,12 @@ GET http://localhost:3500/users
 
 ### PRODUCT CATEGORY REQUESTS
 
-GET http://localhost:3500/users/63c8874956092d795b251e14/productCategories
+PUT http://localhost:3500/users/1/productCategories
+
+### 
+
+PATCH http://localhost:3500/users/1/productCategories/2
+
+### 
+
+DELETE http://localhost:3500/users/1/productCategories/1

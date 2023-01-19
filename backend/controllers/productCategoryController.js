@@ -1,30 +1,31 @@
+const asyncHandler = require('express-async-handler')
 const ProductCategory = require('../models/ProductCategory')
 const User = require('../models/User')
 
-// @desc Get all users
-// @route GET /users
+// @desc Create a product category
+// @route PUT /users/:id/productcategory
 // @access Private
-const getUsersProductCategories = async (req, res) => {
+const createProductCategory = asyncHandler(async (req, res) => {
+    res.send('PC created!')
+})
+
+// @desc Update a product category
+// @route PATCH /users/:id/productcategory/:id
+// @access Private
+const updateProductCategory = asyncHandler(async (req, res) => {
     
-    // Get user Id from page you are on
-    const id = req.params.id 
+    res.send(req.params)
+})
 
-    const user = await User.findById(id).exec()
-    console.log(req.params)
-
-    /*
-    // Get all users from MongoDB
-    const categories = await ProductCategory.find().select('-password').lean()
-
-    // If no users 
-    if (!categories?.length) {
-        return res.status(400).json({ message: 'No users found' })
-    }
-*/
-    res.json(user)
-    
-}
+// @desc Delete a product category
+// @route DELETE /users/:id/productcategory/:id
+// @access Private
+const deleteProductCategory = asyncHandler(async (req, res) => {
+    res.send('PC deleted!')
+})
 
 module.exports = {
-    getUsersProductCategories
+    createProductCategory,
+    updateProductCategory,
+    deleteProductCategory
 }
