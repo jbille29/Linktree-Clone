@@ -1,6 +1,5 @@
 const asyncHandler = require('express-async-handler')
 const ProductCategory = require('../models/ProductCategory')
-const { rawListeners } = require('../models/User')
 const User = require('../models/User')
 
 // @desc Create a product category
