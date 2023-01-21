@@ -4,11 +4,8 @@ const productCategoryController = require('../controllers/productCategoryControl
 
 productCategoryRouter.route('/')
     .put(productCategoryController.createProductCategory)
-    //.post(productCategoryController.createNewProductCategory)
-    //.patch(productCategoryController.updateProductCategory)
-    //.delete(productCategoryController.deleteProductCategory)
 
-productCategoryRouter.route('/:pCatId')
+productCategoryRouter.route('/:categoryId')
     .patch(productCategoryController.updateProductCategory)
     .delete(productCategoryController.deleteProductCategory)
 

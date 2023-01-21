@@ -8,6 +8,7 @@ const { logEvents } = require('./middleware/logger')
 const PORT = process.env.PORT || 3500
 const app = express()
 const userRouter = require('./routes/userRoutes')
+mongoose.set('debug', true) 
 
 connectDB()
 

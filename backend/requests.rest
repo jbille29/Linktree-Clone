@@ -35,7 +35,7 @@ DELETE http://localhost:3500/users
 Content-Type: application/json
 
 {
-    "id": "63c73db09778fa8e0eb9dec6"
+    "id": "63cbe0e930bb5273d8bdaaf0"
 }
 
 ###
@@ -45,12 +45,23 @@ GET http://localhost:3500/users
 
 ### PRODUCT CATEGORY REQUESTS
 
-PUT http://localhost:3500/users/1/productCategories
+PUT http://localhost:3500/users/63cbe7045558bd7584dde1eb/productCategories
+Content-Type: application/json
+
+{
+    "name": "My first sdfs"
+}
+
 
 ### 
 
-PATCH http://localhost:3500/users/1/productCategories/2
+PATCH http://localhost:3500/users/63cbe7045558bd7584dde1eb/productCategories/63cbe918b0e115217b334608
+Content-Type: application/json
+
+{
+    "name": "Record change?"
+}
 
 ### 
 
-DELETE http://localhost:3500/users/1/productCategories/1
+DELETE http://localhost:3500/users/63cbe7045558bd7584dde1eb/productCategories/63cbe83135a2696c1c5d6049
